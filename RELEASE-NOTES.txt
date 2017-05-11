@@ -1,0 +1,32 @@
+- Release note identifier
+CACC algorithm for Aimsun, March 2017, version 1.0
+
+- What's New
+First release.
+
+- System Requirements
+Aimsun 8.0
+Aimsun 8.0 microSDK
+Visual Studio 2005
+
+- Features and changes
+First release.
+
+- Outstanding issues
+None.
+
+- Installation guide
+Obtain from TSS-Transport Simulation Systems (info@aimsun.com) a license of the microSDK.
+Compile the CACC behavioral model from the supplied source code.
+Copy the compiled library and the provided .xml in the folder where custom behavioral models are stored (for example, in Windows: Aimsun 8.0\plugins\aimsun\model).
+
+- Known Issues
+None.
+
+- Troubleshooting
+support@aimsun.com
+
+- FAQ
+
+- Other Resources and Links
+www.aimsun.com

@@ -1,0 +1,9 @@
+Key contributors to the development of the CACC Aimsun Algorithm
+
+TSS-Transport Simulation Systems    : Jordi Gimenez
+Leidos Inc.                         : Peng "Patrick" Su
+NJIT Department of Civil Engineering: Joyoung Lee
+
+The developers also wish to acknowledge several contributors to this study:
+
+Federal Highway Administration: Taylor Lochrane, Daniel Dailey
