@@ -18,22 +18,42 @@ This custom behavioral model has been developed for Aimsun 8.0. Visual Studio 20
 
 Documentation
 -------------
-Compile the provided code to produce a .dll or .dylib. Copy the library and the provided .xml in the folder where custom behavioral models are stored (for example, in Windows: Aimsun 8.0\plugins\aimsun\model).In the model, create a lane type for CACC Vehicles and reserve the appropriate number of lanes along a corridor. If CACC vehicles must use these lanes but any other vehicle types can also access these lanes, the lane type must be set as compulsory for CACC vehicles and optional for the rest of the vehicle classes. Whenever a CACC vehicle enters the corridor, it will be forced to move onto one of the reserved lanes. If the vehicle before or after it is a CACC vehicle, then it joins or forms a platoon. When a vehicle enters Zone 2 for a turn, it will leave the platoon. The following attributes must be created/set in the model file:	Experiment:
+Compile the provided code to produce a .dll or .dylib. Copy the library and the provided .xml in the folder where custom behavioral models are stored (for example, in Windows: Aimsun 8.0\plugins\aimsun\model).
+
+In the model, create a lane type for CACC Vehicles and reserve the appropriate number of lanes along a corridor. If CACC vehicles must use these lanes but any other vehicle types can also access these lanes, the lane type must be set as compulsory for CACC vehicles and optional for the rest of the vehicle classes. Whenever a CACC vehicle enters the corridor, it will be forced to move onto one of the reserved lanes. If the vehicle before or after it is a CACC vehicle, then it joins or forms a platoon. When a vehicle enters Zone 2 for a turn, it will leave the platoon. 
+
+The following attributes must be created/set in the model file:
+	Experiment:
 	-	CACC::Model (integer)
-	Model attributes define which car following model will be applied, the possible values are:	1.	CACC	2.	CACC1	3.	CACC2
+	Model attributes define which car following model will be applied, the possible values are:
+	1.	CACC
+	2.	CACC1
+	3.	CACC2
 	-	CACC::TargetHeadway (double)
-The car following model uses the Target Headway attribute as the desired distance.	-	CACC::AccelerationFactor (double)	-	CACC::DistanceFactor (double)
+The car following model uses the Target Headway attribute as the desired distance.
+	-	CACC::AccelerationFactor (double)
+	-	CACC::DistanceFactor (double)
 	-	CACC::SpeedFactor (double)
 	Acceleration, distance and speed factors are values from 0.0 to 1.0 and they are used to calibrate the model. They set the weights at each component (acceleration, speed and distance). These weights are useful to correct each component, i.e. increasing the speed weight will make the follower to reduce the speed difference respect their leader. Acceleration factor has only effect on the first CACC model.
 	-	CACC::MaxHeadway (double)
-The maximum headway determines how far a vehicle will be considered as a possible leader when trying to form a platoon. This only affects in Lane Changing model.	-	CACC::PreceedingVehicles (integer)Preceding vehicles attribute is just used in CACC2 model, it determines how many vehicles in front of each vehicle will be considered to evaluate their speed.	-	CACC::CACCVeh2 (integer)	-	CACC::CACCVeh5 (integer)
-	-	CACC::Veh2 (integer)	-	CACC::Veh5 (integer)
-CACCVeh2 and CACCVeh5 are the Aimsun CACC vehicle identifiers used in the demand.Veh2 and Veh5 are the Aimsun non CACC vehicles that CACC vehicles will become once they have exited the mainline	-	CACC::LaneTypeId (integer)
+The maximum headway determines how far a vehicle will be considered as a possible leader when trying to form a platoon. This only affects in Lane Changing model.
+	-	CACC::PreceedingVehicles (integer)
+Preceding vehicles attribute is just used in CACC2 model, it determines how many vehicles in front of each vehicle will be considered to evaluate their speed.
+	-	CACC::CACCVeh2 (integer)
+	-	CACC::CACCVeh5 (integer)
+	-	CACC::Veh2 (integer)
+	-	CACC::Veh5 (integer)
+CACCVeh2 and CACCVeh5 are the Aimsun CACC vehicle identifiers used in the demand.
+Veh2 and Veh5 are the Aimsun non CACC vehicles that CACC vehicles will become once they have exited the mainline
+	-	CACC::LaneTypeId (integer)
 LaneTypeId sets the CACC reserved lane type identifier. CACC model will only be applied on vehicles in this lane type
 
-	Road Type:	-	CACC::ActivateCaccAtt (boolean)	Set ActivateCacc attribute to “true” in all the Road Types where CACC model will be applied	Vehicle Type:	-	CACC::IsCaccAtt (boolean)	Set IsCacc attribtue to “true” in all Vehicle types that are equipped with CACC devicesActivate the external behavioral model in the Experiment.
+	Road Type:
+	-	CACC::ActivateCaccAtt (boolean)
+	Set ActivateCacc attribute to “true” in all the Road Types where CACC model will be applied
 
-Web sites
----------
-The CACC for Aimsun software is distributed through the USDOT's JPO Open Source Application Development Portal (OSADP)
-http://itsforge.net/ 
+	Vehicle Type:
+	-	CACC::IsCaccAtt (boolean)
+	Set IsCacc attribtue to “true” in all Vehicle types that are equipped with CACC devices
+
+Activate the external behavioral model in the Experiment.
